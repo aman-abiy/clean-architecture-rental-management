@@ -1,0 +1,12 @@
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\bin\Debug\net6.0\RentalManagement.Domain.deps.json
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\bin\Debug\net6.0\RentalManagement.Domain.dll
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\bin\Debug\net6.0\RentalManagement.Domain.pdb
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\obj\Debug\net6.0\RentalManagement.Domain.csproj.AssemblyReference.cache
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\obj\Debug\net6.0\RentalManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\obj\Debug\net6.0\RentalManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\obj\Debug\net6.0\RentalManagement.Domain.AssemblyInfo.cs
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\obj\Debug\net6.0\RentalManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\obj\Debug\net6.0\RentalManagement.Domain.dll
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\obj\Debug\net6.0\refint\RentalManagement.Domain.dll
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\obj\Debug\net6.0\RentalManagement.Domain.pdb
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Domain\obj\Debug\net6.0\ref\RentalManagement.Domain.dll

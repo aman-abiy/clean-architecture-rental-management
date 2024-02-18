@@ -1,0 +1,6 @@
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Api\obj\Debug\net6.0\RentalManagement.Api.csproj.AssemblyReference.cache
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Api\obj\Debug\net6.0\RentalManagement.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Api\obj\Debug\net6.0\RentalManagement.Api.AssemblyInfoInputs.cache
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Api\obj\Debug\net6.0\RentalManagement.Api.AssemblyInfo.cs
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Api\obj\Debug\net6.0\RentalManagement.Api.csproj.CoreCompileInputs.cache
+C:\Users\amexa\Desktop\dotnet-projs\RentalManagement\RentalManagement.Api\obj\Debug\net6.0\RentalManagement.Api.MvcApplicationPartsAssemblyInfo.cache

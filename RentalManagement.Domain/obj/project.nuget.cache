@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "EY/PvFCDbHrl15SSe5rizxYOeKsxxF+nb5J6uGeaOuB3uxBHwEBztVX6wPxMa7ZAts7E3D2o7rh1TwkWyFKu0w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\amexa\\Desktop\\dotnet-projs\\RentalManagement\\RentalManagement.Domain\\RentalManagement.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amexa\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\amexa\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\amexa\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}
