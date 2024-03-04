@@ -1,5 +1,4 @@
-﻿using Clean_Architecture_Rental_Management.Interface;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -13,6 +12,7 @@ using RentalManagement.Infrastructure.Repository;
 using RentalManagement.Infrastructure.Utils;
 using RentalManagement.Interface;
 using System.Text;
+using RentalManagement.Application.Interface;
 
 namespace RentalManagement.Infrastructure
 {
@@ -25,7 +25,7 @@ namespace RentalManagement.Infrastructure
         {
             services.AddAuth(configuration);
             services.AddDatabase(configuration);
-            services.AddScoped<IDateTimeProvider, DateTimeProvider>();
+            services.AddRepositories(configuration);
 
             return services;
         }
@@ -41,6 +41,8 @@ namespace RentalManagement.Infrastructure
             services.AddSingleton(Options.Create(jwtSettings));
 
             services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+            services.AddScoped<IPasswordHasher, PasswordHasher>();
+
             services.AddAuthentication(defaultScheme: JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -70,6 +72,18 @@ namespace RentalManagement.Infrastructure
 
             services.AddScoped<IUserRepository, UserRepository>();
 
+            return services;
+        }
+
+        public static IServiceCollection AddRepositories(
+            this IServiceCollection services,
+            ConfigurationManager configuration
+         )
+        {
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IDateTimeProvider, DateTimeProvider>();
+            services.AddScoped<IPropertyRepository, PropertyRepository>();
+            services.AddScoped<IRentRepository, RentRepository>();
             return services;
         }
     }

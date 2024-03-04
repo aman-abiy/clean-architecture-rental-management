@@ -1,9 +1,8 @@
-﻿using Clean_Architecture_Rental_Management.Interface;
+﻿using RentalManagement.Interface;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using RentalManagement.Domain.Entities;
 using RentalManagement.Infrastructure.DTO;
-using RentalManagement.Interface;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -11,6 +10,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using RentalManagement.Domain.DTO;
 
 namespace RentalManagement.Infrastructure.Authentication
 {
@@ -25,17 +25,17 @@ namespace RentalManagement.Infrastructure.Authentication
             _jwtSettings = jwtSettings.Value;
         }
 
-        public string GenerateToken(User user)
+        public string GenerateToken(UserDTO user)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret));
             var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Sub, user.Email.ToString()),
                 new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
                 new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
-                new Claim(JwtRegisteredClaimNames.Jti, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, user.Email.ToString()),
             };
 
             var securityToken = new JwtSecurityToken(

@@ -13,16 +13,16 @@ namespace RentalManagement.Domain.Entities
         public Guid Id { get; set; } = Guid.NewGuid();
 
         [Required]
-        public string userId { get; set; } = null!;
+        public Guid userId { get; set; }
 
         [Required]
         public User user { get; set; } = null!;
 
         [Required]
-        public string propertyId { get; set; } = null!;
+        public Guid propertyId { get; set; }
 
         [Required]
-        public User property { get; set; } = null!;
+        public Property property { get; set; } = null!;
 
         public DateTime UpdatededDateTime { get; set; } = DateTime.Now;
 

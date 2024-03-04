@@ -1,14 +1,17 @@
-﻿using MapsterMapper;
+﻿using ErrorOr;
+using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using RentalManagement.Api.DTO.RequestDTO;
-using RentalManagement.DTO;
+using RegisterHandler.Service.Authentication.Query;
+using RentalManagement.Api.DTO.RequestDTO.Body;
+using RentalManagement.Api.DTO.ResponseDTO;
+using RentalManagement.Application.DTO.ServiceResults;
 using RentalManagement.Service.Authentication.Command;
 
 namespace RentalManagement.Api.Controllers
 {
-    [Route("/auth")]
-    public class AuthController : ControllerBase
+    [Route("auth")]
+    public class AuthController : ApiController
     {
         public readonly IMediator _mediator;
         public readonly IMapper _mapper;
@@ -22,11 +25,32 @@ namespace RentalManagement.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
-            RegisterCommand command = _mapper.Map<RegisterCommand>(request);
+            RegisterUserCommand command = _mapper.Map<RegisterUserCommand>(request);
 
-            AuthenticationResult authResult = await _mediator.Send(command);
+            ErrorOr<AuthenticationResult> authResult = await _mediator.Send(command);
 
-            return Ok(authResult);
+            return authResult.Match(
+                authResult => Ok(
+                    _mapper.Map<AuthenticationResponse>(authResult)
+            ),
+                errors => Problem(errors)
+            );
+        }
+
+        [Route("/login")]
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginRequest request)
+        {
+            LoginQuery query = _mapper.Map<LoginQuery>(request);
+
+            ErrorOr<AuthenticationResult> authResult = await _mediator.Send(query);
+
+            return authResult.Match(
+                authResult => Ok(
+                    _mapper.Map<AuthenticationResponse>(authResult)
+            ),
+                errors => Problem(errors)
+            );
         }
     }
 }

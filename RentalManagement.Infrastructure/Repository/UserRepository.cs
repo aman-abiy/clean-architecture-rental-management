@@ -1,4 +1,7 @@
-﻿using RentalManagement.Domain.Entities;
+﻿using MapsterMapper;
+using Microsoft.EntityFrameworkCore;
+using RentalManagement.Domain.DTO;
+using RentalManagement.Domain.Entities;
 using RentalManagement.Domain.Interface;
 using RentalManagement.Infrastructure.Context;
 using System;
@@ -12,21 +15,28 @@ namespace RentalManagement.Infrastructure.Repository
     internal class UserRepository : IUserRepository
     {
 
+        private readonly IMapper _mapper;
         private readonly RentalManagementDbContext _dbContext;
 
-        public UserRepository(RentalManagementDbContext dbContext)
+        public UserRepository(IMapper mapper, RentalManagementDbContext dbContext)
         {
+            _mapper = mapper;
             _dbContext = dbContext;
         }
 
-        public User AddUser()
+
+        public async Task<User> AddUser(RegisterUser user)
         {
-            
+            User newUser = _mapper.Map<User>(user);
+            await _dbContext.Users.AddAsync(newUser);
+            await _dbContext.SaveChangesAsync();
+
+            return newUser;
         }
 
-        public User GetUserByEmail(string email)
+        public async Task<User?> GetUserByEmail(string email)
         {
-            return _dbContext.Us
+            return await _dbContext.Users.Where(c => c.Email == email).FirstOrDefaultAsync();
         }
     }
 }

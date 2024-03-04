@@ -11,7 +11,8 @@ namespace RentalManagement.Utils
 {
 
     // This class is acting as extension implemetation to convert convert the IInfrastructureDependencyInjection interface to a static method
-    // in the ServiceCollectionExtention so that we cann call it statically in program.cs
+    // in the ServiceCollectionExtention so that we can call it statically in program.cs, since the presentation layer is not associated with
+    // the Infrastructure layer. This implementation is bridging that separation of concern
     public class InfrastructureDependencyInjectionImpl : IInfrastructureDependencyInjection
     {
         public IServiceCollection AddInfrastructure(IServiceCollection services, ConfigurationManager configuration)

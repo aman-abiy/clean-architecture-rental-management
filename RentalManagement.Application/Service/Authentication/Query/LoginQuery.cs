@@ -1,5 +1,6 @@
-﻿using MediatR;
-using RentalManagement.DTO;
+﻿using ErrorOr;
+using MediatR;
+using RentalManagement.Application.DTO.ServiceResults;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,5 @@ namespace RegisterHandler.Service.Authentication.Query
     public record LoginQuery(
         string Email,
         string Password
-    ) : IRequest<AuthenticationResult>;
+    ) : IRequest<ErrorOr<AuthenticationResult>>;
 }

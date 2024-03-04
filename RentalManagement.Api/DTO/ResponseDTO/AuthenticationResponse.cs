@@ -1,4 +1,6 @@
-﻿namespace RentalManagement.Api.DTO.ResponseDTO
+﻿using RentalManagement.Domain.Entities;
+
+namespace RentalManagement.Api.DTO.ResponseDTO
 {
     public record AuthenticationResponse(
         Guid Id,
